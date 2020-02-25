@@ -1,5 +1,5 @@
 /** @author Isaiah Boblett 161 
- * Assignment 1
+ * Assignment 2
  * The file contains methods to construct a new list, add to that list,
  * remove a certain element from the list, count the number of elements
  * currently in the list, return the list as a string, and to search
@@ -137,6 +137,12 @@ public class SimpleList {
 		return searchReturn;
 	}
 	
+	/**
+	 * The append method takes in an integer parameter, then adds it onto the
+	 * end of the list. The method does this by using the count method which
+	 * keeps track of the elements in the list. 
+	 * @param parameter the integer to be added onto the end of the array
+	 */
 	public void append(int parameter) {
 		if(count >= list.length) {
 			int[] tempArray = list;
@@ -151,10 +157,19 @@ public class SimpleList {
 		}
 	}
 	
+	/**
+	 * The integer returns the first element of the list.
+	 * @return returns the first element in the list.
+	 */
 	public int first() {		
 		return list[0];
 	}
 	
+	/**
+	 * The method returns the length of the list minus the current number of
+	 * elements in the list.
+	 * @return returns the number of possible spaces in the list.
+	 */
 	public int size() {
 		return list.length - count;
 	}
