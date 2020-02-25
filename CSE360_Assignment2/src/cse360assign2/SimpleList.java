@@ -13,7 +13,7 @@ public class SimpleList {
 	 * These attributes store the values in the list, and the count
 	 * of the elements in the list.
 	 */
-	private int[] list;
+	private static int[] list;
 	private int count;
 	
 	/**
@@ -40,8 +40,8 @@ public class SimpleList {
 		}
 		else {
 			int[] tempArray = list;
-			list = new int[list.length + (list.length / 2)];
-			for(int index = 0; index < list.length; index++) {
+			list = new int[(int) (list.length + Math.floor((list.length / 2)))];
+			for(int index = 0; index < tempArray.length; index++) {
 				list[index] = tempArray[index];
 			}
 			count++;
@@ -66,9 +66,9 @@ public class SimpleList {
 	public void remove(int integerToBeRemoved) {
 		int indexToRemove = search(integerToBeRemoved);
 		
-		if(count < (list.length / 4)) {
+		if(count < (int) Math.floor((list.length / 4))) {
 			int[] tempArray = list;
-			list = new int[list.length + (list.length / 2)];
+			list = new int[list.length - (int) Math.floor(list.length / 4)];
 			for(int index = 0; index < list.length; index++) {
 				list[index] = tempArray[index];
 			}
@@ -156,7 +156,6 @@ public class SimpleList {
 	}
 	
 	public int size() {
-		int size = 0;
-		return size;
+		return list.length - count;
 	}
 }
