@@ -158,11 +158,31 @@ public class SimpleList {
 	}
 	
 	/**
-	 * The integer returns the first element of the list.
+	 * The method returns the first element of the list. If there are
+	 * no elements in the list it returns -1;
 	 * @return returns the first element in the list.
 	 */
-	public int first() {		
-		return list[0];
+	public int first() {
+		if(count > 0) {
+			return list[0];
+		}
+		else {
+			return -1;
+		}
+	}
+	
+	/**
+	 * The method returns the last element in the list. If there are no
+	 * elements in the list it returns -1;
+	 * @return returns the last element in the list
+	 */
+	public int last() {
+		if(count > 0) {
+			return list[count - 1];
+		}
+		else {
+			return -1;
+		}
 	}
 	
 	/**
